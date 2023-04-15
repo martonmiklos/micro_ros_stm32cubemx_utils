@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+cd ../micro_ros_stm32cubemx_utils/library_generation/
 
 export BASE_PATH=$(pwd)/..
 export PROJECT_PATH=../../
@@ -21,14 +22,9 @@ fi
 
 ######## Trying to retrieve CFLAGS ########
 
-if [ $(MICROROS_USE_CUBEIDE) ]; then
-    export RET_CFLAGS=$(find $PROJECT_PATH -type f -name subdir.mk -exec cat {} \; | python3 $BASE_PATH/library_generation/extract_flags.py)
-else
-    # Use CubeMX approach
-    export RET_CFLAGS=$(cd $PROJECT_PATH && make print_cflags)
-fi
+export RET_CFLAGS=$(find $PROJECT_PATH -type f -name subdir.mk -exec cat {} \; | python3 $BASE_PATH/library_generation/extract_flags.py)
 
-if [ $RET_CFLAGS != "" ]; then
+if [ "$RET_CFLAGS" != "" ]; then
     echo "Found CFLAGS:"
     echo "-------------"
     echo $RET_CFLAGS
@@ -64,7 +60,6 @@ if [ ! -f "$BASE_PATH/libmicroros/libmicroros.a" ]; then
 
     make -f libmicroros.mk
 else
-    # If exists just rebuild
     make -f libmicroros.mk rebuild_metas
 fi
 
