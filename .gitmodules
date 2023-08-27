@@ -1,0 +1,6 @@
+[submodule "library_generation/extra_packages/battery_info"]
+	path = library_generation/extra_packages/battery_info
+	url = ssh://git@git.euroknows.com:2222/marton.miklos/battery_info.git
+[submodule "library_generation/extra_packages/pmw3901_data"]
+	path = library_generation/extra_packages/pmw3901_data
+	url = ssh://git@git.euroknows.com:2222/marton.miklos/pmw3901_data.git
