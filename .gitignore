@@ -10,3 +10,5 @@ build
 .vscode
 libmicroros
 custombuild
+microros_static_library_ide
+.directory
