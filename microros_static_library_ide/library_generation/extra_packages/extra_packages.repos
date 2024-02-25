@@ -1,5 +1,5 @@
 repositories:
-  control_msgs:
+  amr_msgs:
     type: git
-    url: https://github.com/ros-controls/control_msgs
-    version: galactic-devel
+    url: ssh://git@git.euroknows.com:2222/marton.miklos/amr_msgs.git
+    version: master
