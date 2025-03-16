@@ -1,0 +1,3 @@
+[submodule "microros_static_library_ide/library_generation/extra_packages/amr_msgs"]
+	path = microros_static_library_ide/library_generation/extra_packages/amr_msgs
+	url = ssh://git@git.euroknows.com:2222/euroknows/amr_msgs.git
